@@ -1,0 +1,1628 @@
+{
+    "arrisKeyBindingMain": {
+        "type": "panel",
+        "size": [
+            "100%+0px",
+            "100%+0px"
+        ],
+        "layer": 1,
+        "controls": [
+            {
+                "stack_panel": {
+                    "type": "stack_panel",
+                    "size": [
+                        "100%+0px",
+                        "100%+0px"
+                    ],
+                    "layer": 1,
+                    "controls": [
+                        {
+                            "top_panel": {
+                                "type": "panel",
+                                "size": [
+                                    "100%+0px",
+                                    23.0
+                                ],
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "top_bar": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "clip_direction": "left",
+                                            "clip_ratio": 0.0,
+                                            "texture": "textures/ui/StoreTopBar",
+                                            "controls": [
+                                                {
+                                                    "title_stack_panel": {
+                                                        "type": "stack_panel",
+                                                        "anchor_from": "top_middle",
+                                                        "anchor_to": "top_middle",
+                                                        "size": [
+                                                            "100%+0px",
+                                                            19.0
+                                                        ],
+                                                        "layer": 1,
+                                                        "orientation": "horizontal",
+                                                        "controls": [
+                                                            {
+                                                                "padding1": {
+                                                                    "type": "panel",
+                                                                    "size": [
+                                                                        2.0,
+                                                                        "100%+0px"
+                                                                    ],
+                                                                    "layer": 1
+                                                                }
+                                                            },
+                                                            {
+                                                                "back_button_panel": {
+                                                                    "type": "panel",
+                                                                    "size": [
+                                                                        15.0,
+                                                                        "100%+0px"
+                                                                    ],
+                                                                    "layer": 2,
+                                                                    "controls": [
+                                                                        {
+                                                                            "button@common.button": {
+                                                                                "type": "button",
+                                                                                "$control_alpha": 1.0,
+                                                                                "$default_texture": "textures/ui/back_button_default",
+                                                                                "$hover_texture": "textures/ui/back_button_hover",
+                                                                                "$is_new_nine_slice": false,
+                                                                                "$label_layer": 3,
+                                                                                "$nine_slice_buttom": 0,
+                                                                                "$nine_slice_left": 0,
+                                                                                "$nine_slice_right": 0,
+                                                                                "$nine_slice_top": 0,
+                                                                                "$nineslice_size": [
+                                                                                    0,
+                                                                                    0,
+                                                                                    0,
+                                                                                    0
+                                                                                ],
+                                                                                "$pressed_button_name": "#CloseKeyBindingScreen",
+                                                                                "$pressed_texture": "textures/ui/back_button_pressed",
+                                                                                "$texture_layer": 2,
+                                                                                "size": [
+                                                                                    "100%+0px",
+                                                                                    "100%x+0px"
+                                                                                ],
+                                                                                "layer": 2,
+                                                                                "default_control": "default",
+                                                                                "hover_control": "hover",
+                                                                                "is_handle_button_move_event": true,
+                                                                                "pressed_control": "pressed",
+                                                                                "bindings": [
+                                                                                    {
+                                                                                        "binding_type": "collection_details",
+                                                                                        "binding_collection_name": "",
+                                                                                        "binding_condition": "always_when_visible"
+                                                                                    }
+                                                                                ],
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "default@netease_editor_template_namespace.default": {}
+                                                                                    },
+                                                                                    {
+                                                                                        "hover@netease_editor_template_namespace.hover": {}
+                                                                                    },
+                                                                                    {
+                                                                                        "pressed@netease_editor_template_namespace.pressed": {}
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "title": {
+                                                        "type": "label",
+                                                        "color": [
+                                                            0.3176470588235294,
+                                                            0.3176470588235294,
+                                                            0.3176470588235294
+                                                        ],
+                                                        "font_type": "default",
+                                                        "text": "自定义模组按键映射",
+                                                        "text_alignment": "center"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "center_panel": {
+                                "type": "panel",
+                                "size": [
+                                    "100%+0px",
+                                    "fill"
+                                ],
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "bg": {
+                                            "type": "image",
+                                            "size": [
+                                                "100%+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "clip_direction": "left",
+                                            "clip_ratio": 0.0,
+                                            "color": [
+                                                0.1921568627450981,
+                                                0.196078431372549,
+                                                0.2
+                                            ],
+                                            "nineslice_size": [
+                                                3.0,
+                                                3.0,
+                                                3.0,
+                                                3.0
+                                            ],
+                                            "texture": "textures/ui/white_background",
+                                            "controls": [
+                                                {
+                                                    "stack_panel": {
+                                                        "type": "stack_panel",
+                                                        "size": [
+                                                            "100%+0px",
+                                                            "100%+0px"
+                                                        ],
+                                                        "layer": 1,
+                                                        "orientation": "horizontal",
+                                                        "controls": [
+                                                            {
+                                                                "selector_area@common.scrolling_panel": {
+                                                                    "$background_nine_slice_buttom": 0,
+                                                                    "$background_nine_slice_left": 0,
+                                                                    "$background_nine_slice_right": 0,
+                                                                    "$background_nine_slice_top": 0,
+                                                                    "$background_nineslice_size": [
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "$box_nine_slice_buttom": 0,
+                                                                    "$box_nine_slice_left": 0,
+                                                                    "$box_nine_slice_right": 0,
+                                                                    "$box_nine_slice_top": 0,
+                                                                    "$box_nineslice_size": [
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "$is_background_nine_slice": false,
+                                                                    "$is_box_nine_slice": false,
+                                                                    "$is_track_nine_slice": false,
+                                                                    "$scroll_background_image_control": "netease_editor_template_namespace.scroll_background_image",
+                                                                    "$scroll_background_texture": "",
+                                                                    "$scroll_box_mouse_image_control": "netease_editor_template_namespace.scroll_box_image",
+                                                                    "$scroll_box_texture": "textures/ui/ScrollBox",
+                                                                    "$scroll_box_touch_image_control": "netease_editor_template_namespace.scroll_box_image",
+                                                                    "$scroll_track_image_control": "netease_editor_template_namespace.scroll_track_image",
+                                                                    "$scroll_track_texture": "textures/ui/ScrollRail",
+                                                                    "$scrolling_content": "arrisCustomKeyBinding.arrisSelectorPanel",
+                                                                    "$show_background": false,
+                                                                    "$track_nine_slice_buttom": 0,
+                                                                    "$track_nine_slice_left": 0,
+                                                                    "$track_nine_slice_right": 0,
+                                                                    "$track_nine_slice_top": 0,
+                                                                    "$track_nineslice_size": [
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "layer": 9,
+                                                                    "size": [
+                                                                        "30%+0px",
+                                                                        "100%+0px"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "section_divider": {
+                                                                    "type": "image",
+                                                                    "size": [
+                                                                        3.0,
+                                                                        "100%+0px"
+                                                                    ],
+                                                                    "layer": 1,
+                                                                    "texture": "textures/ui/HowToPlayDivider"
+                                                                }
+                                                            },
+                                                            {
+                                                                "content_area@common.scrolling_panel": {
+                                                                    "$background_nine_slice_buttom": 0,
+                                                                    "$background_nine_slice_left": 0,
+                                                                    "$background_nine_slice_right": 0,
+                                                                    "$background_nine_slice_top": 0,
+                                                                    "$background_nineslice_size": [
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "$box_nine_slice_buttom": 0,
+                                                                    "$box_nine_slice_left": 0,
+                                                                    "$box_nine_slice_right": 0,
+                                                                    "$box_nine_slice_top": 0,
+                                                                    "$box_nineslice_size": [
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "$is_background_nine_slice": false,
+                                                                    "$is_box_nine_slice": false,
+                                                                    "$is_track_nine_slice": false,
+                                                                    "$scroll_background_image_control": "netease_editor_template_namespace.scroll_background_image",
+                                                                    "$scroll_background_texture": "",
+                                                                    "$scroll_box_mouse_image_control": "netease_editor_template_namespace.scroll_box_image",
+                                                                    "$scroll_box_texture": "textures/ui/ScrollBox",
+                                                                    "$scroll_box_touch_image_control": "netease_editor_template_namespace.scroll_box_image",
+                                                                    "$scroll_track_image_control": "netease_editor_template_namespace.scroll_track_image",
+                                                                    "$scroll_track_texture": "textures/ui/ScrollRail",
+                                                                    "$scrolling_content": "arrisCustomKeyBinding.arrisKeybindingPanel",
+                                                                    "$show_background": false,
+                                                                    "$track_nine_slice_buttom": 0,
+                                                                    "$track_nine_slice_left": 0,
+                                                                    "$track_nine_slice_right": 0,
+                                                                    "$track_nine_slice_top": 0,
+                                                                    "$track_nineslice_size": [
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "layer": 9,
+                                                                    "size": [
+                                                                        "fill",
+                                                                        "100%+0px"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "arrisKeyBindingScreen@common.base_screen": {
+        "$screen_content": "arrisCustomKeyBinding.arrisKeyBindingMain",
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_cancel",
+                "mapping_type": "global",
+                "to_button_id": "button.menu_exit"
+            }
+        ]
+    },
+    "arrisKeybindingPanel": {
+        "type": "stack_panel",
+        "size": [
+            "100%+0px",
+            "100%+0px"
+        ],
+        "layer": 1,
+        "controls": [
+            {
+                "title": {
+                    "type": "panel",
+                    "size": [
+                        "100%+0px",
+                        12.0
+                    ],
+                    "layer": 1,
+                    "controls": [
+                        {
+                            "offset": {
+                                "type": "panel",
+                                "size": [
+                                    "97%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "label": {
+                                            "type": "label",
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "font_type": "default",
+                                            "text": "模组名称",
+                                            "text_alignment": "center"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "arrisKeybindingGrid": {
+                    "type": "stack_grid",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "offset": [
+                        0,
+                        0.0
+                    ],
+                    "size": [
+                        "100%+0px",
+                        "100%c+0px"
+                    ],
+                    "layer": 1,
+                    "visible": true,
+                    "collection_name": "arrisKeybindingGrid",
+                    "item_count": 3,
+                    "orientation": "vertical",
+                    "property_bag": {
+                        "#arrisKeybindingGrid.item_count": 3
+                    },
+                    "bindings": [
+                        {
+                            "binding_name_override": "#StackGridItemsCount",
+                            "binding_condition": "always",
+                            "binding_name": "#arrisKeybindingGrid.item_count"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "keybindingPanel": {
+                                "type": "panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%c+0px"
+                                ],
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "arrisKeybindingControl": {
+                                            "type": "stack_panel",
+                                            "size": [
+                                                "97%+0px",
+                                                "100%c+0px"
+                                            ],
+                                            "controls": [
+                                                {
+                                                    "title_panel": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "100%+0px",
+                                                            15.0
+                                                        ],
+                                                        "layer": 1,
+                                                        "visible": false,
+                                                        "controls": [
+                                                            {
+                                                                "label": {
+                                                                    "type": "label",
+                                                                    "anchor_from": "left_middle",
+                                                                    "anchor_to": "left_middle",
+                                                                    "font_type": "default",
+                                                                    "text": "我是标题，区分模组",
+                                                                    "text_alignment": "center"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "padding": {
+                                                        "type": "panel",
+                                                        "size": [
+                                                            "100%+0px",
+                                                            4.0
+                                                        ],
+                                                        "layer": 1
+                                                    }
+                                                },
+                                                {
+                                                    "stack_panel": {
+                                                        "type": "stack_panel",
+                                                        "size": [
+                                                            "100%+0px",
+                                                            30.0
+                                                        ],
+                                                        "layer": 1,
+                                                        "orientation": "horizontal",
+                                                        "controls": [
+                                                            {
+                                                                "tips_panel": {
+                                                                    "type": "panel",
+                                                                    "size": [
+                                                                        "fill",
+                                                                        "100%+0px"
+                                                                    ],
+                                                                    "controls": [
+                                                                        {
+                                                                            "bg": {
+                                                                                "type": "image",
+                                                                                "size": [
+                                                                                    "100%+2px",
+                                                                                    "100%+2px"
+                                                                                ],
+                                                                                "layer": 1,
+                                                                                "clip_direction": "left",
+                                                                                "clip_ratio": 0.0,
+                                                                                "texture": "textures/ui/text_label_box",
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "label": {
+                                                                                            "type": "label",
+                                                                                            "size": [
+                                                                                                "100%+0px",
+                                                                                                "default"
+                                                                                            ],
+                                                                                            "font_type": "default",
+                                                                                            "text": "#keybinding.description",
+                                                                                            "text_alignment": "center",
+                                                                                            "property_bag": {
+                                                                                                "#keybinding.description": "[描述描述描述]"
+                                                                                            },
+                                                                                            "bindings": [
+                                                                                                {
+                                                                                                    "binding_type": "collection",
+                                                                                                    "binding_collection_name": "arrisKeybindingGrid",
+                                                                                                    "binding_name": "#keybinding.description"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "key_binding@common.button": {
+                                                                    "type": "button",
+                                                                    "$control_alpha": 1,
+                                                                    "$default_texture": "textures/ui/button_borderless_light",
+                                                                    "$hover_texture": "textures/ui/button_borderless_lighthover",
+                                                                    "$is_new_nine_slice": false,
+                                                                    "$label_layer": 3,
+                                                                    "$nine_slice_buttom": 0,
+                                                                    "$nine_slice_left": 0,
+                                                                    "$nine_slice_right": 0,
+                                                                    "$nine_slice_top": 0,
+                                                                    "$nineslice_size": [
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "$pressed_button_name": "",
+                                                                    "$pressed_texture": "textures/ui/button_borderless_lightpressed",
+                                                                    "$texture_layer": 2,
+                                                                    "size": [
+                                                                        146.0,
+                                                                        "100%+0px"
+                                                                    ],
+                                                                    "layer": 5,
+                                                                    "button_mappings": [
+                                                                        {
+                                                                            "to_button_id": "#arrisKeyBindingLeftClick",
+                                                                            "from_button_id": "button.menu_ok",
+                                                                            "mapping_type": "focused"
+                                                                        },
+                                                                        {
+                                                                            "to_button_id": "#arrisKeyBindingLeftClick",
+                                                                            "from_button_id": "button.menu_select",
+                                                                            "mapping_type": "pressed"
+                                                                        },
+                                                                        {
+                                                                            "to_button_id": "#arrisKeyBindingRightClick",
+                                                                            "from_button_id": "button.menu_secondary_select",
+                                                                            "mapping_type": "pressed"
+                                                                        },
+                                                                        {
+                                                                            "to_button_id": "#arrisKeyBindingRightClick",
+                                                                            "from_button_id": "button.controller_select",
+                                                                            "mapping_type": "pressed"
+                                                                        }
+                                                                    ],
+                                                                    "default_control": "default",
+                                                                    "hover_control": "hover",
+                                                                    "is_handle_button_move_event": true,
+                                                                    "locked_control": "locked",
+                                                                    "pressed_control": "pressed",
+                                                                    "property_bag": {
+                                                                        "#key_binding.enabled": true
+                                                                    },
+                                                                    "bindings": [
+                                                                        {
+                                                                            "binding_type": "collection_details",
+                                                                            "binding_collection_name": "arrisKeybindingGrid",
+                                                                            "binding_condition": "always_when_visible"
+                                                                        },
+                                                                        {
+                                                                            "binding_name_override": "#enabled",
+                                                                            "binding_collection_name": "arrisKeybindingGrid",
+                                                                            "binding_condition": "visible",
+                                                                            "binding_type": "collection",
+                                                                            "binding_name": "#key_binding.enabled"
+                                                                        }
+                                                                    ],
+                                                                    "controls": [
+                                                                        {
+                                                                            "default@netease_editor_template_namespace.default": {
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "border": {
+                                                                                            "type": "image",
+                                                                                            "size": [
+                                                                                                "100%+2px",
+                                                                                                "100%+2px"
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "color": [
+                                                                                                0.0,
+                                                                                                0.0,
+                                                                                                0.0
+                                                                                            ],
+                                                                                            "texture": "textures/ui/focus_border_white"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "key_name": {
+                                                                                            "type": "label",
+                                                                                            "layer": 10,
+                                                                                            "color": [
+                                                                                                0.2784313725490196,
+                                                                                                0.2823529411764706,
+                                                                                                0.2901960784313726
+                                                                                            ],
+                                                                                            "font_type": "default",
+                                                                                            "text": "#keybinding.keys",
+                                                                                            "text_alignment": "center",
+                                                                                            "property_bag": {
+                                                                                                "#keybinding.keys": "按键名称"
+                                                                                            },
+                                                                                            "bindings": [
+                                                                                                {
+                                                                                                    "binding_type": "collection",
+                                                                                                    "binding_collection_name": "arrisKeybindingGrid",
+                                                                                                    "binding_name": "#keybinding.keys"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "hover@netease_editor_template_namespace.hover": {
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "border": {
+                                                                                            "type": "image",
+                                                                                            "size": [
+                                                                                                "100%+2px",
+                                                                                                "100%+2px"
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "texture": "textures/ui/focus_border_white"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "key_name": {
+                                                                                            "type": "label",
+                                                                                            "layer": 10,
+                                                                                            "color": [
+                                                                                                0.9607843137254902,
+                                                                                                0.9764705882352941,
+                                                                                                1.0
+                                                                                            ],
+                                                                                            "font_type": "default",
+                                                                                            "text": "#keybinding.keys",
+                                                                                            "text_alignment": "center",
+                                                                                            "property_bag": {
+                                                                                                "#keybinding.keys": "按键名称"
+                                                                                            },
+                                                                                            "bindings": [
+                                                                                                {
+                                                                                                    "binding_type": "collection",
+                                                                                                    "binding_collection_name": "arrisKeybindingGrid",
+                                                                                                    "binding_name": "#keybinding.keys"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "pressed@netease_editor_template_namespace.pressed": {
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "border": {
+                                                                                            "type": "image",
+                                                                                            "size": [
+                                                                                                "100%+2px",
+                                                                                                "100%+2px"
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "texture": "textures/ui/focus_border_white"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "key_name": {
+                                                                                            "type": "label",
+                                                                                            "layer": 10,
+                                                                                            "color": [
+                                                                                                0.9607843137254902,
+                                                                                                0.9764705882352941,
+                                                                                                1.0
+                                                                                            ],
+                                                                                            "font_type": "default",
+                                                                                            "text": "#keybinding.keys",
+                                                                                            "text_alignment": "center",
+                                                                                            "property_bag": {
+                                                                                                "#keybinding.keys": "按键名称"
+                                                                                            },
+                                                                                            "bindings": [
+                                                                                                {
+                                                                                                    "binding_type": "collection",
+                                                                                                    "binding_collection_name": "arrisKeybindingGrid",
+                                                                                                    "binding_name": "#keybinding.keys"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "setting_keybinding@netease_editor_template_namespace.hover": {
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "border": {
+                                                                                            "type": "image",
+                                                                                            "size": [
+                                                                                                "100%+2px",
+                                                                                                "100%+2px"
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "texture": "textures/ui/focus_border_white"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "key_name": {
+                                                                                            "type": "label",
+                                                                                            "layer": 10,
+                                                                                            "color": [
+                                                                                                0.9607843137254902,
+                                                                                                0.9764705882352941,
+                                                                                                1.0
+                                                                                            ],
+                                                                                            "font_type": "default",
+                                                                                            "text": "#keybinding.keys",
+                                                                                            "text_alignment": "center",
+                                                                                            "property_bag": {
+                                                                                                "#keybinding.keys": "按键名称"
+                                                                                            },
+                                                                                            "bindings": [
+                                                                                                {
+                                                                                                    "binding_type": "collection",
+                                                                                                    "binding_collection_name": "arrisKeybindingGrid",
+                                                                                                    "binding_name": "#keybinding.keys"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ],
+                                                                                "visible": false
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "locked@netease_editor_template_namespace.default": {
+                                                                                "color": [
+                                                                                    0.6784,
+                                                                                    0.6824,
+                                                                                    0.6902
+                                                                                ],
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "border": {
+                                                                                            "type": "image",
+                                                                                            "size": [
+                                                                                                "100%+2px",
+                                                                                                "100%+2px"
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "color": [
+                                                                                                0.0,
+                                                                                                0.0,
+                                                                                                0.0
+                                                                                            ],
+                                                                                            "texture": "textures/ui/focus_border_white"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "lock_icon": {
+                                                                                            "type": "image",
+                                                                                            "anchor_from": "bottom_right",
+                                                                                            "anchor_to": "bottom_right",
+                                                                                            "size": [
+                                                                                                8,
+                                                                                                8
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "color": [
+                                                                                                0.0,
+                                                                                                0.0,
+                                                                                                0.0
+                                                                                            ],
+                                                                                            "texture": "textures/ui/lock"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "key_name": {
+                                                                                            "type": "label",
+                                                                                            "layer": 10,
+                                                                                            "color": [
+                                                                                                0.2784313725490196,
+                                                                                                0.2823529411764706,
+                                                                                                0.2901960784313726
+                                                                                            ],
+                                                                                            "font_type": "default",
+                                                                                            "text": "#keybinding.keys",
+                                                                                            "text_alignment": "center",
+                                                                                            "property_bag": {
+                                                                                                "#keybinding.keys": "按键名称"
+                                                                                            },
+                                                                                            "bindings": [
+                                                                                                {
+                                                                                                    "binding_type": "collection",
+                                                                                                    "binding_collection_name": "arrisKeybindingGrid",
+                                                                                                    "binding_name": "#keybinding.keys"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "padding": {
+                                                                    "type": "panel",
+                                                                    "size": [
+                                                                        1.0,
+                                                                        "100%+0px"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "reset_key@common.button": {
+                                                                    "type": "button",
+                                                                    "$control_alpha": 1.0,
+                                                                    "$default_texture": "textures/ui/button_borderless_light",
+                                                                    "$hover_texture": "textures/ui/button_borderless_lighthover",
+                                                                    "$is_new_nine_slice": false,
+                                                                    "$label_layer": 3,
+                                                                    "$nine_slice_buttom": 0,
+                                                                    "$nine_slice_left": 0,
+                                                                    "$nine_slice_right": 0,
+                                                                    "$nine_slice_top": 0,
+                                                                    "$nineslice_size": [
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0
+                                                                    ],
+                                                                    "$pressed_button_name": "#arrisKeyBindingResetClick",
+                                                                    "$pressed_texture": "textures/ui/button_borderless_lightpressed",
+                                                                    "$texture_layer": 2,
+                                                                    "size": [
+                                                                        55.0,
+                                                                        "100%+0px"
+                                                                    ],
+                                                                    "layer": 2,
+                                                                    "default_control": "default",
+                                                                    "hover_control": "hover",
+                                                                    "is_handle_button_move_event": true,
+                                                                    "pressed_control": "pressed",
+                                                                    "bindings": [
+                                                                        {
+                                                                            "binding_type": "collection_details",
+                                                                            "binding_collection_name": "arrisKeybindingGrid",
+                                                                            "binding_condition": "always_when_visible"
+                                                                        }
+                                                                    ],
+                                                                    "controls": [
+                                                                        {
+                                                                            "default@netease_editor_template_namespace.default": {
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "border": {
+                                                                                            "type": "image",
+                                                                                            "size": [
+                                                                                                "100%+2px",
+                                                                                                "100%+2px"
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "color": [
+                                                                                                0.0,
+                                                                                                0.0,
+                                                                                                0.0
+                                                                                            ],
+                                                                                            "texture": "textures/ui/focus_border_white",
+                                                                                            "controls": [
+                                                                                                {
+                                                                                                    "arrow": {
+                                                                                                        "type": "image",
+                                                                                                        "size": [
+                                                                                                            14.0,
+                                                                                                            14.0
+                                                                                                        ],
+                                                                                                        "layer": 10,
+                                                                                                        "clip_direction": "left",
+                                                                                                        "clip_ratio": 0.0,
+                                                                                                        "color": [
+                                                                                                            0.3215686274509804,
+                                                                                                            0.3215686274509804,
+                                                                                                            0.3215686274509804
+                                                                                                        ],
+                                                                                                        "texture": "textures/ui/undoArrow"
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "hover@netease_editor_template_namespace.hover": {
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "border": {
+                                                                                            "type": "image",
+                                                                                            "size": [
+                                                                                                "100%+2px",
+                                                                                                "100%+2px"
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "texture": "textures/ui/focus_border_white",
+                                                                                            "controls": [
+                                                                                                {
+                                                                                                    "arrow": {
+                                                                                                        "type": "image",
+                                                                                                        "size": [
+                                                                                                            14.0,
+                                                                                                            14.0
+                                                                                                        ],
+                                                                                                        "layer": 10,
+                                                                                                        "clip_direction": "left",
+                                                                                                        "clip_ratio": 0.0,
+                                                                                                        "color": [
+                                                                                                            1.0,
+                                                                                                            1.0,
+                                                                                                            1.0
+                                                                                                        ],
+                                                                                                        "texture": "textures/ui/undoArrow"
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "pressed@netease_editor_template_namespace.pressed": {
+                                                                                "controls": [
+                                                                                    {
+                                                                                        "border": {
+                                                                                            "type": "image",
+                                                                                            "size": [
+                                                                                                "100%+2px",
+                                                                                                "100%+2px"
+                                                                                            ],
+                                                                                            "layer": 1,
+                                                                                            "clip_direction": "left",
+                                                                                            "clip_ratio": 0.0,
+                                                                                            "texture": "textures/ui/focus_border_white",
+                                                                                            "controls": [
+                                                                                                {
+                                                                                                    "arrow": {
+                                                                                                        "type": "image",
+                                                                                                        "size": [
+                                                                                                            14.0,
+                                                                                                            14.0
+                                                                                                        ],
+                                                                                                        "layer": 10,
+                                                                                                        "clip_direction": "left",
+                                                                                                        "clip_ratio": 0.0,
+                                                                                                        "color": [
+                                                                                                            1.0,
+                                                                                                            1.0,
+                                                                                                            1.0
+                                                                                                        ],
+                                                                                                        "texture": "textures/ui/undoArrow"
+                                                                                                    }
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "arrisSelectorPanel": {
+        "type": "stack_panel",
+        "size": [
+            "100%+0px",
+            "100%+0px"
+        ],
+        "layer": 1,
+        "controls": [
+            {
+                "title": {
+                    "type": "panel",
+                    "size": [
+                        "100%+0px",
+                        15.0
+                    ],
+                    "layer": 1,
+                    "controls": [
+                        {
+                            "label": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    2.0,
+                                    1.0
+                                ],
+                                "font_type": "default",
+                                "text": "模组选项",
+                                "text_alignment": "center"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "selectorStackGrid": {
+                    "type": "stack_grid",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "offset": [
+                        0,
+                        0
+                    ],
+                    "size": [
+                        "100%+0px",
+                        "100%c+0px"
+                    ],
+                    "layer": 1,
+                    "visible": true,
+                    "collection_name": "selectorStackGrid",
+                    "item_count": 3,
+                    "orientation": "vertical",
+                    "property_bag": {
+                        "#selectorStackGrid.item_count": 3
+                    },
+                    "bindings": [
+                        {
+                            "binding_name_override": "#StackGridItemsCount",
+                            "binding_condition": "always",
+                            "binding_name": "#selectorStackGrid.item_count"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "selectorToggle@common.toggle": {
+                                "$checked_control": "arrisCustomKeyBinding.buttonCheckedState",
+                                "$checked_hover_control": "arrisCustomKeyBinding.buttonHoverCheckedState",
+                                "$checked_locked_control": "arrisCustomKeyBinding.buttonUnCheckedState",
+                                "$checked_locked_hover_control": "arrisCustomKeyBinding.buttonUnCheckedState",
+                                "$item_collection_name": "selectorStackGrid",
+                                "$radio_toggle_group": true,
+                                "$toggle_grid_collection_name": "selectorStackGrid",
+                                "$toggle_group_default_selected": 0,
+                                "$toggle_name": "#arrisKeyBindingSelectorToggle",
+                                "$unchecked_control": "arrisCustomKeyBinding.buttonUnCheckedState",
+                                "$unchecked_hover_control": "arrisCustomKeyBinding.buttonHoverState",
+                                "$unchecked_locked_control": "arrisCustomKeyBinding.buttonUnCheckedState",
+                                "$unchecked_locked_hover_control": "arrisCustomKeyBinding.buttonUnCheckedState",
+                                "size": [
+                                    "100%+0px",
+                                    "100%c+0px"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "buttonCheckedState": {
+        "type": "image",
+        "size": [
+            "100%+0px",
+            30.0
+        ],
+        "layer": 1,
+        "color": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "fill": true,
+        "nineslice_size": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ],
+        "texture": "textures/ui/focus_border_white",
+        "controls": [
+            {
+                "bg": {
+                    "type": "image",
+                    "size": [
+                        "100%+-2px",
+                        "100%+-2px"
+                    ],
+                    "layer": 1,
+                    "texture": "textures/ui/button_borderless_lightpressednohover",
+                    "controls": [
+                        {
+                            "stack_panel": {
+                                "type": "stack_panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 1,
+                                "orientation": "horizontal",
+                                "controls": [
+                                    {
+                                        "icon": {
+                                            "type": "panel",
+                                            "size": [
+                                                "100%y+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "mod_icon": {
+                                                        "type": "image",
+                                                        "offset": [
+                                                            0,
+                                                            0.0
+                                                        ],
+                                                        "size": [
+                                                            "100%+-8px",
+                                                            "100%x+0px"
+                                                        ],
+                                                        "layer": 10,
+                                                        "visible": true,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0,
+                                                        "texture": "#icon.texture",
+                                                        "property_bag": {
+                                                            "#icon.texture": "textures/ui/keyboard_and_mouse_glyph_color"
+                                                        },
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name_override": "#texture",
+                                                                "binding_collection_name": "$item_collection_name",
+                                                                "binding_type": "collection",
+                                                                "binding_name": "#icon.texture"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "mod_name": {
+                                            "type": "panel",
+                                            "size": [
+                                                "fill",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "name": {
+                                                        "type": "label",
+                                                        "anchor_from": "left_middle",
+                                                        "anchor_to": "left_middle",
+                                                        "color": [
+                                                            0.1686274509803922,
+                                                            0.1764705882352941,
+                                                            0.1803921568627451
+                                                        ],
+                                                        "font_type": "default",
+                                                        "text": "#selector.text",
+                                                        "text_alignment": "center",
+                                                        "property_bag": {
+                                                            "#selector.text": "模组名称"
+                                                        },
+                                                        "bindings": [
+                                                            {
+                                                                "binding_type": "collection",
+                                                                "binding_collection_name": "$item_collection_name",
+                                                                "binding_name": "#selector.text"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "buttonHoverCheckedState": {
+        "type": "image",
+        "size": [
+            "100%+0px",
+            30.0
+        ],
+        "layer": 1,
+        "color": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "fill": true,
+        "nineslice_size": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ],
+        "texture": "textures/ui/focus_border_white",
+        "controls": [
+            {
+                "bg": {
+                    "type": "image",
+                    "size": [
+                        "100%+-2px",
+                        "100%+-2px"
+                    ],
+                    "layer": 1,
+                    "texture": "textures/ui/button_borderless_lightpressed",
+                    "controls": [
+                        {
+                            "stack_panel": {
+                                "type": "stack_panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 1,
+                                "orientation": "horizontal",
+                                "controls": [
+                                    {
+                                        "icon": {
+                                            "type": "panel",
+                                            "size": [
+                                                "100%y+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "mod_icon": {
+                                                        "type": "image",
+                                                        "offset": [
+                                                            0,
+                                                            0.0
+                                                        ],
+                                                        "size": [
+                                                            "100%+-8px",
+                                                            "100%x+0px"
+                                                        ],
+                                                        "layer": 10,
+                                                        "visible": true,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0,
+                                                        "texture": "#icon.texture",
+                                                        "property_bag": {
+                                                            "#icon.texture": "textures/ui/keyboard_and_mouse_glyph_color"
+                                                        },
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name_override": "#texture",
+                                                                "binding_collection_name": "$item_collection_name",
+                                                                "binding_type": "collection",
+                                                                "binding_name": "#icon.texture"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "mod_name": {
+                                            "type": "panel",
+                                            "size": [
+                                                "fill",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "name": {
+                                                        "type": "label",
+                                                        "anchor_from": "left_middle",
+                                                        "anchor_to": "left_middle",
+                                                        "color": [
+                                                            0.9490196078431372,
+                                                            0.9764705882352941,
+                                                            1.0
+                                                        ],
+                                                        "font_type": "default",
+                                                        "text": "#selector.text",
+                                                        "text_alignment": "center",
+                                                        "property_bag": {
+                                                            "#selector.text": "模组名称"
+                                                        },
+                                                        "bindings": [
+                                                            {
+                                                                "binding_type": "collection",
+                                                                "binding_collection_name": "$item_collection_name",
+                                                                "binding_name": "#selector.text"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "buttonHoverState": {
+        "type": "image",
+        "size": [
+            "100%+0px",
+            30.0
+        ],
+        "layer": 1,
+        "color": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "fill": true,
+        "nineslice_size": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ],
+        "texture": "textures/ui/focus_border_white",
+        "controls": [
+            {
+                "bg": {
+                    "type": "image",
+                    "size": [
+                        "100%+-2px",
+                        "100%+-2px"
+                    ],
+                    "layer": 1,
+                    "texture": "textures/ui/button_borderless_lighthover",
+                    "controls": [
+                        {
+                            "stack_panel": {
+                                "type": "stack_panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 1,
+                                "orientation": "horizontal",
+                                "controls": [
+                                    {
+                                        "icon": {
+                                            "type": "panel",
+                                            "size": [
+                                                "100%y+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "mod_icon": {
+                                                        "type": "image",
+                                                        "offset": [
+                                                            0,
+                                                            0.0
+                                                        ],
+                                                        "size": [
+                                                            "100%+-8px",
+                                                            "100%x+0px"
+                                                        ],
+                                                        "layer": 10,
+                                                        "visible": true,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0,
+                                                        "texture": "#icon.texture",
+                                                        "property_bag": {
+                                                            "#icon.texture": "textures/ui/keyboard_and_mouse_glyph_color"
+                                                        },
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name_override": "#texture",
+                                                                "binding_collection_name": "$item_collection_name",
+                                                                "binding_type": "collection",
+                                                                "binding_name": "#icon.texture"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "mod_name": {
+                                            "type": "panel",
+                                            "size": [
+                                                "fill",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "name": {
+                                                        "type": "label",
+                                                        "anchor_from": "left_middle",
+                                                        "anchor_to": "left_middle",
+                                                        "color": [
+                                                            0.9490196078431372,
+                                                            0.9764705882352941,
+                                                            1.0
+                                                        ],
+                                                        "font_type": "default",
+                                                        "text": "#selector.text",
+                                                        "text_alignment": "center",
+                                                        "property_bag": {
+                                                            "#selector.text": "模组名称"
+                                                        },
+                                                        "bindings": [
+                                                            {
+                                                                "binding_type": "collection",
+                                                                "binding_collection_name": "$item_collection_name",
+                                                                "binding_name": "#selector.text"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "buttonUnCheckedState": {
+        "type": "image",
+        "size": [
+            "100%+0px",
+            30.0
+        ],
+        "layer": 1,
+        "color": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "fill": true,
+        "nineslice_size": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ],
+        "texture": "textures/ui/focus_border_white",
+        "controls": [
+            {
+                "bg": {
+                    "type": "image",
+                    "size": [
+                        "100%+-2px",
+                        "100%+-2px"
+                    ],
+                    "layer": 1,
+                    "texture": "textures/ui/button_borderless_light",
+                    "controls": [
+                        {
+                            "stack_panel": {
+                                "type": "stack_panel",
+                                "size": [
+                                    "100%+0px",
+                                    "100%+0px"
+                                ],
+                                "layer": 1,
+                                "orientation": "horizontal",
+                                "controls": [
+                                    {
+                                        "icon": {
+                                            "type": "panel",
+                                            "size": [
+                                                "100%y+0px",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "mod_icon": {
+                                                        "type": "image",
+                                                        "offset": [
+                                                            0,
+                                                            0.0
+                                                        ],
+                                                        "size": [
+                                                            "100%+-8px",
+                                                            "100%x+0px"
+                                                        ],
+                                                        "layer": 10,
+                                                        "visible": true,
+                                                        "clip_direction": "left",
+                                                        "clip_ratio": 0,
+                                                        "texture": "#icon.texture",
+                                                        "property_bag": {
+                                                            "#icon.texture": "textures/ui/keyboard_and_mouse_glyph_color"
+                                                        },
+                                                        "bindings": [
+                                                            {
+                                                                "binding_name_override": "#texture",
+                                                                "binding_collection_name": "$item_collection_name",
+                                                                "binding_type": "collection",
+                                                                "binding_name": "#icon.texture"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "mod_name": {
+                                            "type": "panel",
+                                            "size": [
+                                                "fill",
+                                                "100%+0px"
+                                            ],
+                                            "layer": 1,
+                                            "controls": [
+                                                {
+                                                    "name": {
+                                                        "type": "label",
+                                                        "anchor_from": "left_middle",
+                                                        "anchor_to": "left_middle",
+                                                        "color": [
+                                                            0.2745098039215687,
+                                                            0.2823529411764706,
+                                                            0.2901960784313726
+                                                        ],
+                                                        "font_type": "default",
+                                                        "text": "#selector.text",
+                                                        "text_alignment": "center",
+                                                        "property_bag": {
+                                                            "#selector.text": "模组名称"
+                                                        },
+                                                        "bindings": [
+                                                            {
+                                                                "binding_type": "collection",
+                                                                "binding_collection_name": "$item_collection_name",
+                                                                "binding_name": "#selector.text"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "arris_addon_keyboard_bindings@controls_section.keyboard_and_mouse_button": {
+        "$toggle_group_forced_index": 114514,
+        "$tts_section_header": "$controls_section_header",
+        "$glyph_texture": "textures/ui/keyboard_and_mouse_glyph",
+        "$glyph_color_texture": "textures/ui/keyboard_and_mouse_glyph_color",
+        "$button_text": "自定义模组按键映射",
+        "$glyph_size": [
+            19,
+            9
+        ],
+        "$toggle_name": "#arrisAddonKeyboardBindings",
+        "$toggle_property_bag": {
+            "#panel_title": "自定义模组按键映射"
+        }
+    },
+    "namespace": "arrisCustomKeyBinding"
+}
