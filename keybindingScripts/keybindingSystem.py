@@ -30,7 +30,11 @@ class KeyBindingData(object):
         if value not in cls._bindings:
             cls._bindings.append(value)
 
-class KeyBinding:
+class KeyBinding(object):
+    """
+    按键绑定数据类
+    存储单个按键绑定的所有相关信息
+    """
     def __init__(self, keys, callback, description, allow_modify, trigger_mode, trigger_screens, defaultKeys):
         self.__keys = tuple(keys)
         self.__callback = callback
@@ -78,6 +82,18 @@ class KeyBinding:
         self.__defaultKeys = tuple(value)
 
 class CreateKeyBindingFactory(object):
+    """
+    按键绑定工厂类
+    用于创建和管理特定模组的按键绑定
+    """
+    def __new__(cls, modSpace, modName, modIconPath="textures/ui/keyboard_and_mouse_glyph_color"):
+        """单例模式"""
+        for obj in KeyBindingData.GetKeyMapping():
+            if (obj.ModSpace, obj.ModName) == (modSpace, modName):
+                return obj
+        cls.__bindings = []
+        return super(CreateKeyBindingFactory, cls).__new__(cls)
+
     def __init__(self, modSpace, modName, modIconPath="textures/ui/keyboard_and_mouse_glyph_color"):
         # type: (str, str, str) -> None
         self.__modSpace = modSpace
@@ -86,11 +102,6 @@ class CreateKeyBindingFactory(object):
         self.__bindings = []
         self.Create()
 
-    def Create(self):
-        for obj in KeyBindingData.GetKeyMapping():
-            if (obj.ModSpace, obj.ModName) == (self.__modSpace, self.__modName):
-                # 防止重载时,重复添加按键映射
-                return
         KeyBindingData.AddKeyMapping(self)
 
     def RegisterKeyBinding(self, keys, callback, description, allow_modify=True, trigger_mode=0, trigger_screens=()):
@@ -99,7 +110,7 @@ class CreateKeyBindingFactory(object):
         :param callback: 触发的回调函数
         :param description: 描述
         :param allow_modify: 是否允许玩家进行自定义修改 default: True
-        :param trigger_mode: 触发模式: 0 为单次触发 1 为游戏Tick触发，直到松开为止 2 为渲染帧Tick触发，直到松开为止 (默认为0)
+        :param trigger_mode: 触发模式: 0 为单次触发 1 为游戏Tick触发, 直到松开为止 2 为渲染帧Tick触发, 直到松开为止 (默认为0)
         :param trigger_screens: 允许触发的界面 (默认为空,代表全局触发)
         :return: None
         """
