@@ -13,50 +13,25 @@ NativeScreenManager = clientApi.GetNativeScreenManagerCls()
 NativeScreenManager.instance().RegisterScreenProxy("settings.screen_world_controls_and_settings", "keybindingScripts.proxys.SettingScreenProxy.SettingScreenProxy")
 # ===========================
 
+
 PushKeyBindingScreen = lambda: clientApi.PushScreen("arris", "arrisKeyBinding")
 
 class KeyBindingData(object):
-    _instance = None
-    
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super(KeyBindingData, cls).__new__(cls)
-            cls._instance._bindings = []
-        return cls._instance
-    
-    def __init__(self):
-        # 避免重复初始化
-        if hasattr(self, '_initialized'):
-            return
-        self._bindings = []
-        self._initialized = True
+    _bindings = []
 
-    @property
-    def KeyMapping(self):
-        # type: () -> list
-        return self._bindings
+    @classmethod
+    def GetKeyMapping(cls):
+        return cls._bindings
 
-    @KeyMapping.setter
-    def KeyMapping(self, value):
-        # type: (CreateKeyBindingFactory) -> None
+    @classmethod
+    def AddKeyMapping(cls, value):
         if not isinstance(value, CreateKeyBindingFactory):
             raise ValueError("传入的参数错误")
-        if not hasattr(self, '_bindings') or not isinstance(self._bindings, list):
-            self._bindings = []
-        if value not in self._bindings:
-            self._bindings.append(value)
+        if value not in cls._bindings:
+            cls._bindings.append(value)
 
-
-keyBindingData = KeyBindingData()
-
-
-class KeyBinding(object):
-    """
-    按键绑定数据类
-    存储单个按键绑定的所有相关信息
-    """
+class KeyBinding:
     def __init__(self, keys, callback, description, allow_modify, trigger_mode, trigger_screens, defaultKeys):
-        # type: (tuple, callable, str, bool, int, tuple, tuple) -> None
         self.__keys = tuple(keys)
         self.__callback = callback
         self.__description = description
@@ -68,72 +43,57 @@ class KeyBinding(object):
 
     @property
     def keys(self):
-        # type: () -> tuple
         return self.__keys
 
     @keys.setter
     def keys(self, value):
-        # type: (tuple) -> None
         self.__keys = tuple(value)
 
     @property
     def callback(self):
-        # type: () -> callable
         return self.__callback
 
     @property
     def description(self):
-        # type: () -> str
         return self.__description
 
     @property
     def allow_modify(self):
-        # type: () -> bool
         return self.__allow_modify
 
     @property
     def trigger_mode(self):
-        # type: () -> int
         return self.__trigger_mode
 
     @property
     def trigger_screens(self):
-        # type: () -> tuple
         return self.__trigger_screens
 
     @property
     def default_keys(self):
-        # type: () -> tuple
         return self.__defaultKeys
 
     @default_keys.setter
     def default_keys(self, value):
-        # type: (tuple) -> None
         self.__defaultKeys = tuple(value)
 
 class CreateKeyBindingFactory(object):
-    """
-    按键绑定工厂类
-    用于创建和管理特定模组的按键绑定
-    """
-    def __new__(cls, modSpace, modName, modIconPath="textures/ui/keyboard_and_mouse_glyph_color"):
-        # 防止重复创建
-        for obj in keyBindingData.KeyMapping:
-            if (obj.ModSpace, obj.ModName) == (modSpace, modName):
-                return obj
-        cls.__bindings = []
-        return super(CreateKeyBindingFactory, cls).__new__(cls)
-
     def __init__(self, modSpace, modName, modIconPath="textures/ui/keyboard_and_mouse_glyph_color"):
         # type: (str, str, str) -> None
         self.__modSpace = modSpace
         self.__modName = modName
         self.__modIconPath = modIconPath
+        self.__bindings = []
+        self.Create()
 
-        keyBindingData.KeyMapping = self
+    def Create(self):
+        for obj in KeyBindingData.GetKeyMapping():
+            if (obj.ModSpace, obj.ModName) == (self.__modSpace, self.__modName):
+                # 防止重载时,重复添加按键映射
+                return
+        KeyBindingData.AddKeyMapping(self)
 
     def RegisterKeyBinding(self, keys, callback, description, allow_modify=True, trigger_mode=0, trigger_screens=()):
-        # type: (tuple, callable, str, bool, int, tuple) -> int
         """
         :param keys: 按下的按键，支持单个或多个组合键
         :param callback: 触发的回调函数
@@ -141,7 +101,7 @@ class CreateKeyBindingFactory(object):
         :param allow_modify: 是否允许玩家进行自定义修改 default: True
         :param trigger_mode: 触发模式: 0 为单次触发 1 为游戏Tick触发，直到松开为止 2 为渲染帧Tick触发，直到松开为止 (默认为0)
         :param trigger_screens: 允许触发的界面 (默认为空,代表全局触发)
-        :return: 返回该按键绑定的唯一ID, 用于后续获取或修改
+        :return: None
         """
         configData = compFactory.CreateConfigClient(levelId).GetConfigData(str(self.ModSpace) + str(self.ModName), True) or {}
         key = str(keys) + str(description)
@@ -154,7 +114,9 @@ class CreateKeyBindingFactory(object):
         for existingBindings in self.__bindings:
             if existingBindings.keys == tuple(bindingKeys) and existingBindings.description == description:
                 return hash((bindingKeys, description))
-        self.__bindings.append(KeyBinding(bindingKeys, callback, description, allow_modify, trigger_mode, trigger_screens, keys))
+        self.__bindings.append(
+            KeyBinding(bindingKeys, callback, description, allow_modify, trigger_mode, trigger_screens, keys)
+        )
         return hash((bindingKeys, description))
 
     def GetKeyBinding(self, Id):
@@ -168,7 +130,7 @@ class CreateKeyBindingFactory(object):
                 continue
             return binding.keys
         return ()
-    
+
     def UnBindKey(self, Id):
         # type: (int) -> bool
         """
@@ -184,60 +146,47 @@ class CreateKeyBindingFactory(object):
 
     @property
     def ModSpace(self):
-        # type: () -> str
         return self.__modSpace
 
     @property
     def ModName(self):
-        # type: () -> str
         return self.__modName
 
     @property
     def ModIconPath(self):
-        # type: () -> str
         return self.__modIconPath
 
     @property
     def Bindings(self):
-        # type: () -> list
         return self.__bindings
 
 class keybindingSystem(ClientSystem):
-    """
-    按键绑定系统主类
-    处理按键事件、游戏刻更新和渲染刻更新
-    """
     def __init__(self, namespace, systemName):
-        # type: (str, str) -> None
         ClientSystem.__init__(self, namespace, systemName)
         self.ListenForEvent(nameSpace, SystemName, "UiInitFinished", self, self.Ui_Init)
         self.ListenForEvent(nameSpace, SystemName, "OnKeyPressInGame", self, self.ArrisKeyPressedEvent)
         self.ListenForEvent(nameSpace, SystemName, "OnScriptTickClient", self, self.ArrisGameTick)
         self.ListenForEvent(nameSpace, SystemName, "GameRenderTickEvent", self, self.ArrisRenderTick)
 
-        self._pressed_keys = set()  # type: set
-        self._game_tick_callbacks = set()  # type: set
-        self._render_tick_callbacks = set()  # type: set
+        self._pressed_keys = []
+        self._game_tick_callbacks = []
+        self._render_tick_callbacks = []
 
     @staticmethod
     def Ui_Init(_):
-        # type: (any) -> None
         clientApi.RegisterUI("arris", "arrisKeyBinding", "keybindingScripts.keybindingUI.keybindingUI", "arrisCustomKeyBinding.arrisKeyBindingScreen")
 
     def ArrisGameTick(self):
-        # type: () -> None
         """网易脚本刻更新处理"""
         for func in self._game_tick_callbacks:
             func()
 
     def ArrisRenderTick(self, _):
-        # type: (any) -> None
         """游戏渲染刻更新处理"""
         for func in self._render_tick_callbacks:
             func()
 
     def ArrisKeyPressedEvent(self, args):
-        # type: (dict) -> None
         """处理键盘事件"""
         keyValue = int(args['key'])
         isDown = int(args["isDown"])
@@ -245,27 +194,30 @@ class keybindingSystem(ClientSystem):
 
         if isDown:
             if keyValue not in self._pressed_keys:
-                self._pressed_keys.add(keyValue)
+                self._pressed_keys.append(keyValue)
                 if screenName == "arrisKeyBindingScreen":
                     clientApi.GetUI("arris", "arrisKeyBinding").KeyPressedEvent(keyValue)
         else:
-            self._pressed_keys.discard(keyValue)
+            if keyValue in self._pressed_keys:
+                self._pressed_keys.remove(keyValue)
         if screenName == "arrisKeyBindingScreen":
             # 在按键映射设置界面取消触发回调函数，防止在设置时出现意外情况
             return
         # 检查并触发键位绑定
-        for obj in keyBindingData.KeyMapping:
-            for mappingData in obj.Bindings:
+        for cls in KeyBindingData.GetKeyMapping():
+            for mappingData in cls.Bindings:
                 if Counter(mappingData.keys) == Counter(self._pressed_keys):
                     if mappingData.trigger_screens and screenName not in mappingData.trigger_screens:
                         continue
 
                     if mappingData.trigger_mode == 1 and mappingData.callback not in self._game_tick_callbacks:
-                        self._game_tick_callbacks.add(mappingData.callback)
+                        self._game_tick_callbacks.append(mappingData.callback)
                     elif mappingData.trigger_mode == 2 and mappingData.callback not in self._render_tick_callbacks:
-                        self._render_tick_callbacks.add(mappingData.callback)
+                        self._render_tick_callbacks.append(mappingData.callback)
                     else:
                         mappingData.callback()
                 else:
-                    self._game_tick_callbacks.discard(mappingData.callback)
-                    self._render_tick_callbacks.discard(mappingData.callback)
+                    if mappingData.callback in self._game_tick_callbacks:
+                        self._game_tick_callbacks.remove(mappingData.callback)
+                    if mappingData.callback in self._render_tick_callbacks:
+                        self._render_tick_callbacks.remove(mappingData.callback)

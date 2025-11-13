@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import mod.client.extraClientApi as clientApi
-from .keybindingSystem import keyBindingData
+from .keybindingSystem import KeyBindingData
 from .KeyBoardFormat import GetKeyBoardFormat
 
 ScreenNode = clientApi.GetScreenNodeCls()
@@ -14,13 +14,9 @@ class keybindingUI(ScreenNode):
         self.selectorIndex = 0 # 左侧选项当前选择索引
         self.nowSelectButton = None
         self.nowInputKeys = []
-
-    # def Create(self):
-    #     # 进入PC操作模式
-    #     compFactory.CreateGame(levelId).SimulateTouchWithMouse(False)
+        self.keyBindingData = KeyBindingData.GetKeyMapping()
 
     def KeyPressedEvent(self, pressedKeys):
-        # type: (int) -> None
         # 键盘按键事件
         if not self.nowSelectButton:
             return
@@ -30,8 +26,8 @@ class keybindingUI(ScreenNode):
         nowInputKeys = tuple(self.nowInputKeys)
         bindings.keys = nowInputKeys
         self.UpdateScreen(True)
-        modKeyBinding = keyBindingData.KeyMapping[self.selectorIndex]
         # 保存玩家设置
+        modKeyBinding = self.keyBindingData[self.selectorIndex]
         data = compFactory.CreateConfigClient(levelId).GetConfigData(str(modKeyBinding.ModSpace) + str(modKeyBinding.ModName), True) or {}
         key = str(bindings.default_keys) + str(bindings.description)
         data[key] = nowInputKeys
@@ -41,7 +37,7 @@ class keybindingUI(ScreenNode):
     def KeyBindingResetClick(self, args):
         # 重置按键映射
         index = args["#collection_index"]
-        modKeyBinding = keyBindingData.KeyMapping[self.selectorIndex]
+        modKeyBinding = self.keyBindingData[self.selectorIndex]
         bindings = modKeyBinding.Bindings[index]
         bindings.keys = bindings.default_keys
         self.nowSelectButton = None
@@ -57,7 +53,7 @@ class keybindingUI(ScreenNode):
     def KeyBindingLeftClick(self, args):
         # 左键选择当前按键映射进行设置
         index = args["#collection_index"]
-        modKeyBinding = keyBindingData.KeyMapping[self.selectorIndex]
+        modKeyBinding = self.keyBindingData[self.selectorIndex]
         modName = modKeyBinding.ModName
         self.nowSelectButton = (modName, modKeyBinding.Bindings[index])
         self.nowInputKeys = []
@@ -72,11 +68,11 @@ class keybindingUI(ScreenNode):
 
     @ViewBinder.binding(ViewBinder.BF_BindInt, "#selectorStackGrid.item_count")
     def SetSelectorStackGridCount(self):
-        return len(keyBindingData.KeyMapping)
+        return len(self.keyBindingData)
 
     @ViewBinder.binding(ViewBinder.BF_BindInt, "#arrisKeybindingGrid.item_count")
     def SetKeybindingGridCount(self):
-        modKeyBinding = keyBindingData.KeyMapping[self.selectorIndex]
+        modKeyBinding = self.keyBindingData[self.selectorIndex]
         return len(modKeyBinding.Bindings)
 
     @ViewBinder.binding(ViewBinder.BF_ToggleChanged, "#arrisKeyBindingSelectorToggle")
@@ -88,14 +84,14 @@ class keybindingUI(ScreenNode):
 
     @ViewBinder.binding_collection(ViewBinder.BF_BindString, "arrisKeybindingGrid", "#keybinding.description")
     def SetKeybindingItemDescription(self, index):
-        modKeyBinding = keyBindingData.KeyMapping[self.selectorIndex]
+        modKeyBinding = self.keyBindingData[self.selectorIndex]
         if index >= len(modKeyBinding.Bindings):
             return ""
         return modKeyBinding.Bindings[index].description
 
     @ViewBinder.binding_collection(ViewBinder.BF_BindString, "arrisKeybindingGrid", "#keybinding.keys")
     def SetKeybindingItemKeys(self, index):
-        modKeyBinding = keyBindingData.KeyMapping[self.selectorIndex]
+        modKeyBinding = self.keyBindingData[self.selectorIndex]
         formatText = ""
         if index >= len(modKeyBinding.Bindings):
             return ""
@@ -110,7 +106,7 @@ class keybindingUI(ScreenNode):
 
         # 检测按键冲突
         conflictList = []
-        for modKeyBindingCls in keyBindingData.KeyMapping:
+        for modKeyBindingCls in self.keyBindingData:
             for binding in modKeyBindingCls.Bindings:
                 if binding.keys == keys:
                     conflictList.append((modKeyBindingCls.ModName, keys))
@@ -126,18 +122,18 @@ class keybindingUI(ScreenNode):
     @ViewBinder.binding_collection(ViewBinder.BF_BindBool, "arrisKeybindingGrid", "#key_binding.enabled")
     def SetKeybindingItemEnabled(self, index):
         # 设置是否允许玩家进行修改
-        modKeyBinding = keyBindingData.KeyMapping[self.selectorIndex]
+        modKeyBinding = self.keyBindingData[self.selectorIndex]
         if index >= len(modKeyBinding.Bindings):
             return True
         return modKeyBinding.Bindings[index].allow_modify
 
     @ViewBinder.binding_collection(ViewBinder.BF_BindString, "selectorStackGrid", "#selector.text")
     def SetSelectorItemName(self, index):
-        return keyBindingData.KeyMapping[index].ModName
+        return self.keyBindingData[index].ModName
 
     @ViewBinder.binding_collection(ViewBinder.BF_BindString, "selectorStackGrid", "#icon.texture")
     def SetSelectorItemIcon(self, index):
-        return keyBindingData.KeyMapping[index].ModIconPath
+        return self.keyBindingData[index].ModIconPath
 
     @ViewBinder.binding(ViewBinder.BF_ButtonClickUp, "#CloseKeyBindingScreen")
     def CloseScreen(self, _):
