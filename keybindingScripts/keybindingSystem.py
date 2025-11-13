@@ -100,7 +100,6 @@ class CreateKeyBindingFactory(object):
         self.__modName = modName
         self.__modIconPath = modIconPath
         self.__bindings = []
-        self.Create()
 
         KeyBindingData.AddKeyMapping(self)
 
