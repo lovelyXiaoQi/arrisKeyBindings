@@ -326,7 +326,7 @@
         "type": "stack_panel",
         "size": [
             "100%+0px",
-            "100%+0px"
+            "100%c+0px"
         ],
         "layer": 1,
         "controls": [
@@ -1016,7 +1016,7 @@
         "type": "stack_panel",
         "size": [
             "100%+0px",
-            "100%+0px"
+            "100%c+0px"
         ],
         "layer": 1,
         "controls": [
